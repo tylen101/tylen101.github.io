@@ -12,13 +12,14 @@ function Home() {
             <h1>Innovate. Create. Deliver.</h1>
             <p>Empowering businesses through smart software solutions.</p>
           </div>
-          <img
-            src="/images/hero-image.webp"
-            alt="Hero"
-            className="hero-image"
-          />
+          <img src="/images/hero-image.gif" alt="Hero" className="hero-image" />
         </section>
       </ParallaxLayer>
+      <img
+        src="/images/background-image.gif"
+        alt="background"
+        className="background-image"
+      />
 
       {/* About Section */}
       <ParallaxLayer offset={1} speed={0.5}>
@@ -40,8 +41,9 @@ function Home() {
       </ParallaxLayer>
 
       {/* Services Section */}
-      <ParallaxLayer offset={2} speed={0.5}>
+      <ParallaxLayer offset={2} speed={1}>
         <section className="services">
+          {/* make these selectable to expand to show details? */}
           <h2>Our Services</h2>
           <div className="services-list">
             <div className="service-card">

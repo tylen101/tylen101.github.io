@@ -10,12 +10,12 @@ html,
 #root {
   font-family: 'Poppins', sans-serif;
   height: 100%;
+  background-color: #6b6b6d;
 }
 
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,10 +24,15 @@ html,
   color: #fff;
   text-align: center;
   padding: 2rem;
+  background-color: #6b6b6d;
 }
 
 .hero-content {
   z-index: 2;
+  color: rgb(207, 208, 164);
+  color: rgb(255, 255, 255);
+  mix-blend-mode: add;
+  mix-blend-mode: difference;
 }
 
 .hero h1 {
@@ -41,24 +46,29 @@ html,
 
 .hero-image {
   position: absolute;
-  /* bottom: 0;
-  right: 10%; */
-  /* width: 300px; */
-  width: 100%;
-  height: 100%
-  ;
+  user-select: none;
+  width: 110%;
+  height: 110%;
+  opacity: 0.8;
+}
 
-  opacity: 0.5;
+.background-image {
+  height: 100%;
+  padding-top: 100vh;
+  opacity: 0.3;
+  user-select: none;
 }
 
 /* About Section */
 .about {
   height: 100vh;
-  background: #fff;
+  background: #cfcece;
+  background: linear-gradient(135deg, #8b8b8ba6, #dddddda3);
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 2rem;
+  color: white;
 }
 
 .about-text {
@@ -67,13 +77,13 @@ html,
 
 .about h2 {
   font-size: 3rem;
-  color: #333;
+  color: white;
   margin-bottom: 1rem;
 }
 
 .about p {
   font-size: 1.2rem;
-  color: #666;
+  color: #f6f6f6;
 }
 
 .about-image {
@@ -85,7 +95,7 @@ html,
 /* Services Section */
 .services {
   height: 100vh;
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  background: linear-gradient(180deg, #b5ac9200,rgba(94, 96, 68, 0.418) , #5c5b4cf7);
   color: white;
   display: flex;
   flex-direction: column;
