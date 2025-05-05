@@ -11,10 +11,30 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">Parallax</a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+        <ul class="navbar-links" id="navbarLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <div>
       <div>
         <img src="images/hero-image.gif" alt="Hero" class="hero-image" />
-        <section class="page-section hero">
+        <section class="page-section hero" id="hero">
           <div class="hero-content">
             <h1>Innovate. Create. Deliver.</h1>
             <p>Empowering businesses through smart software solutions.</p>
@@ -22,7 +42,7 @@
         </section>
       </div>
 
-      <section class="page-section about">
+      <section class="page-section about" id="about">
         <div class="about-text">
           <h2>About Us</h2>
           <p>
@@ -35,7 +55,7 @@
       </section>
 
       <div>
-        <section class="page-section services">
+        <section class="page-section services" id="services">
           <h2>Our Services</h2>
           <div class="services-list">
             <div class="service-card">
@@ -69,5 +89,41 @@
       alt="background"
       class="background-image"
     />
+
+    <script>
+      const menuToggle = document.getElementById('menuToggle');
+      const navbarLinks = document.getElementById('navbarLinks');
+
+      menuToggle.addEventListener('click', () => {
+        navbarLinks.classList.toggle('show');
+      });
+
+      navbarLinks.querySelectorAll('a').forEach((link) =>
+        link.addEventListener('click', () => {
+          navbarLinks.classList.remove('show');
+        })
+      );
+
+      const sections = document.querySelectorAll('section.page-section');
+      const navLinks = document.querySelectorAll('.navbar-links a');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('class').split(' ')[1];
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
