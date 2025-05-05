@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Worm</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="icon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">Parallax</a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+        <ul class="navbar-links" id="navbarLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div>
+      <div>
+        <img src="images/hero-image.gif" alt="Hero" class="hero-image" />
+        <section class="page-section hero" id="hero">
+          <div class="hero-content">
+            <h1>Innovate. Create. Deliver.</h1>
+            <p>Empowering businesses through smart software solutions.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="page-section about" id="about">
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>
+            We are a passionate team of developers crafting software that drives
+            success. Our mission is to build elegant, powerful solutions that
+            scale with your business.
+          </p>
+        </div>
+        <img src="images/about-us.webp" alt="About Us" class="about-image" />
+      </section>
+
+      <div>
+        <section class="page-section services" id="services">
+          <h2>Our Services</h2>
+          <div class="services-list">
+            <div class="service-card">
+              <img src="images/custom-dev.svg" alt="Custom Dev" />
+              <h3>Custom Software Development</h3>
+            </div>
+            <div class="service-card">
+              <img src="images/web-mobile.svg" alt="Web Mobile" />
+              <h3>Web & Mobile Apps</h3>
+            </div>
+            <div class="service-card">
+              <img src="images/cloud.svg" alt="Cloud" />
+              <h3>Cloud Integration</h3>
+            </div>
+            <div class="service-card">
+              <img src="images/consulting.svg" alt="Consulting" />
+              <h3>Consulting & Strategy</h3>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <footer class="page-section footer">
+          <p>© 2025 Parallax. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+    <img
+      src="images/background-image.gif"
+      alt="background"
+      class="background-image"
+    />
+
+    <script>
+      const menuToggle = document.getElementById('menuToggle');
+      const navbarLinks = document.getElementById('navbarLinks');
+
+      menuToggle.addEventListener('click', () => {
+        navbarLinks.classList.toggle('show');
+      });
+
+      navbarLinks.querySelectorAll('a').forEach((link) =>
+        link.addEventListener('click', () => {
+          navbarLinks.classList.remove('show');
+        })
+      );
+
+      const sections = document.querySelectorAll('section.page-section');
+      const navLinks = document.querySelectorAll('.navbar-links a');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('class').split(' ')[1];
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
