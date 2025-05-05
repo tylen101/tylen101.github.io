@@ -11,129 +11,63 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
-    <div class="background-decor">
-      <div class="blob"></div>
-      <canvas id="particles"></canvas>
+    <div>
+      <div>
+        <img src="images/hero-image.gif" alt="Hero" class="hero-image" />
+        <section class="page-section hero">
+          <div class="hero-content">
+            <h1>Innovate. Create. Deliver.</h1>
+            <p>Empowering businesses through smart software solutions.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="page-section about">
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>
+            We are a passionate team of developers crafting software that drives
+            success. Our mission is to build elegant, powerful solutions that
+            scale with your business.
+          </p>
+        </div>
+        <img src="images/about-us.webp" alt="About Us" class="about-image" />
+      </section>
+
+      <div>
+        <section class="page-section services">
+          <h2>Our Services</h2>
+          <div class="services-list">
+            <div class="service-card">
+              <img src="images/custom-dev.svg" alt="Custom Dev" />
+              <h3>Custom Software Development</h3>
+            </div>
+            <div class="service-card">
+              <img src="images/web-mobile.svg" alt="Web Mobile" />
+              <h3>Web & Mobile Apps</h3>
+            </div>
+            <div class="service-card">
+              <img src="images/cloud.svg" alt="Cloud" />
+              <h3>Cloud Integration</h3>
+            </div>
+            <div class="service-card">
+              <img src="images/consulting.svg" alt="Consulting" />
+              <h3>Consulting & Strategy</h3>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <footer class="page-section footer">
+          <p>© 2025 Parallax. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
-
-    <header>
-      <div class="container">
-        <h1 class="logo" style="display: flex; align-items: center">
-          <img src="icon.svg" height="28px" style="padding: 0 10px" />A Busy
-          Business
-        </h1>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <section class="hero parallax">
-      <div class="container fade-in">
-        <h2>Welcome to Your Business</h2>
-        <p>Professional services with a personal touch.</p>
-        <a href="#contact" class="cta-button">Get in Touch</a>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <h3>About Us</h3>
-        <p>
-          We are a dedicated team providing top-notch solutions tailored to your
-          needs.
-        </p>
-      </div>
-    </section>
-
-    <section id="services" class="section alt-bg">
-      <div class="container">
-        <h3>Our Services</h3>
-        <ul class="services-list">
-          <li>Consulting</li>
-          <li>Web Development</li>
-          <li>Support & Maintenance</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h3>Contact Us</h3>
-        <p>
-          Email us at
-          <a href="mailto:info@yourbusiness.com">info@BLAH_BLAHBLAH.com</a>
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <p>&copy; 2025 BLAH BLAH BLAH. All rights reserved.</p>
-      </div>
-    </footer>
-    <script>
-      // Floating particles
-      const canvas = document.getElementById('particles');
-      const ctx = canvas.getContext('2d');
-      let particles = [];
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-
-      window.addEventListener('resize', resize);
-      resize();
-
-      class Particle {
-        constructor() {
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
-          this.radius = Math.random() * 2 + 1;
-          this.speedX = Math.random() * 0.6 - 0.3;
-          this.speedY = Math.random() * 0.6 - 0.3;
-          this.alpha = Math.random() * 0.5 + 0.3;
-        }
-
-        update() {
-          this.x += this.speedX;
-          this.y += this.speedY;
-
-          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-        }
-
-        draw() {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(0, 120, 220, ${this.alpha})`;
-          ctx.fill();
-        }
-      }
-
-      function initParticles() {
-        particles = [];
-        for (let i = 0; i < 80; i++) {
-          particles.push(new Particle());
-        }
-      }
-
-      function animateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach((p) => {
-          p.update();
-          p.draw();
-        });
-        requestAnimationFrame(animateParticles);
-      }
-
-      initParticles();
-      animateParticles();
-    </script>
+    <img
+      src="images/background-image.gif"
+      alt="background"
+      class="background-image"
+    />
   </body>
 </html>
