@@ -172,7 +172,7 @@ body {
 
 /* About Section */
 .about {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -203,7 +203,7 @@ body {
 
 /* Services Section */
 .services {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -243,6 +243,7 @@ body {
 .service-card img {
   max-height: 150px;
   margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
 .service-details {
@@ -258,10 +259,6 @@ body {
 .service-card.active .service-details {
   max-height: 500px; /* adjust depending on content */
   opacity: 1;
-}
-
-.hidden {
-  /* display: none; */
 }
 
 /* Footer */
